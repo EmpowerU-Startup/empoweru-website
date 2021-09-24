@@ -121,7 +121,8 @@ body{
  	text-transform: uppercase;
 }
 .navbar-nav li a:hover{
-	color:gray;
+	transition: all ease-in 0.2s;
+	filter: drop-shadow(0px 8px 8px rgba(0, 0, 0, 0.5));
 }
 .downangle{
  	padding-left:.2rem;
@@ -134,7 +135,7 @@ body{
 }
 .navbar-toggler i{
 	color:white;
-	font-size:2rem;
+	font-size:4rem;
 }
 .fa-times{
 	display: none;
@@ -169,7 +170,7 @@ body{
 	color:white;
 }
 .hero-p{
-	color:#E5E5E5;
+	color:white;
 	font-size:2.2rem;
 }
 
@@ -187,7 +188,6 @@ body{
 	font-size: 1.8rem;
 	color:white;
 	filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
-
 }
 .joinbtn{
 	box-shadow: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
@@ -198,18 +198,18 @@ body{
 	box-shadow:rgba(0, 0, 0, 0.25);
 }
 .lrn-more-btn{
-	filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
-
+	/* filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25)); */
+	background: var(--pink);
+	border:2px solid var(--pink)!important;
+	color: white;
 }
 .joinbtn:hover{
-	background: var(--pink);
-	border:2px solid var(--pink);
-	color:white!important;
+	transition: all ease-in 0.2s;
+	filter: drop-shadow(0px 8px 8px rgba(0, 0, 0, 0.25));
 }
 .lrn-more-btn:hover{
-	background: var(--pink);
-	border:2px solid var(--pink);
-	color: white;
+	transition: all ease-in 0.2s;
+	filter: drop-shadow(0px 8px 8px rgba(0, 0, 0, 0.25));
 }
 
 .arrow {
@@ -460,8 +460,11 @@ border-radius: 40px;
 	text-transform: uppercase;
 }
 .contactform input[type="submit"]:hover{
-	background: var(--gray2);
-
+	transition: all ease-in 0.2s;
+	background: white;
+	color: var(--pink);
+	transition: all ease-in 0.2s;
+	filter: drop-shadow(0px 8px 8px rgba(0, 0, 0, 0.25));
 }
 .social-icons ul{
 	padding-left:0px;
