@@ -4,8 +4,13 @@ body{
 	font-family:'roboto-regular';
 }
 html{
-	font-size: 62.5%;i
+	font-size: 62.5%;
+
+  scroll-behavior: smooth;
+
+
 }
+
 .container-fluid,div,.row{
 	margin:0px;padding:0px;
 }
@@ -184,7 +189,7 @@ body{
 	filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
 
 }
-.joinbtn{
+.contactbtn{
 	box-shadow: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
 	background: white;
 	font-size: 1.8rem;
@@ -196,7 +201,7 @@ body{
 	filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
 
 }
-.joinbtn:hover{
+.contactbtn:hover{
 	background: var(--pink);
 	border:2px solid white;
 	color:white!important;
@@ -548,4 +553,12 @@ border-radius: 40px;
 .readmorelink{
 	
 	color:#F46873;
+}
+.mb3{
+	margin-bottom: 3rem;
+}
+.card img {
+	width: 100%;
+	height: 180px;
+	object-fit: cover;
 }

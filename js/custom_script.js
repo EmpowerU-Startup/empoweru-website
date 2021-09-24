@@ -7,8 +7,8 @@
 			menu_area.removeClass('sticky_navigation');
 		}
 	});
-
 	// sticky effect end
+
 
 	// menu-icon change to cross 
 $(document).ready(function(){
@@ -19,147 +19,60 @@ $(document).ready(function(){
 			$(this).hide() && $('.fa-bars').show();
 		});
 	});
-	// menu-icon change to end 
+// menu-icon change to end 
+
+function submitToAPI(e) {
+	e.preventDefault();
+	var URL = "https://fvieuv7tyf.execute-api.us-east-1.amazonaws.com/contact-us";
+
+		 var Namere = /[A-Za-z]{1}[A-Za-z]/;
+		 if (!Namere.test($("#first-name-input").val())) {
+					  alert ("First name can not less than 2 char");
+			 return;
+		 }
+		 if (!Namere.test($("#last-name-input").val())) {
+			alert ("Last name can not less than 2 char");
+			return;
+		}
+		 if ($("#email-input").val()=="") {
+			 alert ("Please enter your email id");
+			 return;
+		 }
+
+		 var reeamil = /^([\w-\.]+@([\w-]+\.)+[\w-]{2,6})?$/;
+		 if (!reeamil.test($("#email-input").val())) {
+			 alert ("Please enter valid email address");
+			 return;
+		 }
+	
+	var name = $("#first-name-input").val() + " " + $("#last-name-input").val();
+	var email = $("#email-input").val();
+	var desc = $("#description-input").val();
+	var data = {
+	   name : name,
+	   email : email,
+	   desc : desc
+	 };
+
+	$.ajax({
+	  type: "POST",
+	  url : URL,
+	  dataType: "json",
+	  crossDomain: "true",
+	  contentType: "application/json; charset=utf-8",
+	  data: JSON.stringify(data),
+
+	  
+	  success: function () {
+		// clear form and show a success message
+		alert("Successfull");
+		document.getElementById("contact-form").reset();
+	location.reload();
+	  },
+	  error: function () {
+		// show an error message
+		alert("UnSuccessfull");
+	  }});
+  }
 
 
-
-
-
-
-$('.logos-slider').slick({
-  dots: false,
-  arrow:false,
-  infinite: true,
-  autoplay:true,
-  speed: 400,
-  slidesToShow: 6,
-  slidesToScroll: 1,
-  responsive: [
-    {
-      breakpoint: 1024,
-      settings: {
-        slidesToShow: 5,
-        slidesToScroll: 3,
-        infinite: true,
-         prevArrow: false,
-        nextArrow: false,
-        dots: true
-      }
-    },
-    {
-      breakpoint: 768,
-      settings: {
-        slidesToShow: 4,
-        slidesToScroll: 1
-      }
-    },
-    {
-      breakpoint: 480,
-      settings: {
-        slidesToShow: 2,
-        slidesToScroll: 1
-      }
-    }
-    // You can unslick at a given breakpoint now by adding:
-    // settings: "unslick"
-    // instead of a settings object
-  ]
-});
-
-
-// testimonal slider 
-// slider
-$('#testimonal-sliderrr').slick({
-  dots: true,
-  arrow:false,
-  infinite: true,
-  speed: 300,
-  slidesToShow: 2,
-  margin:30,
-  slidesToScroll: 1,
-  responsive: [
-    {
-      breakpoint: 1200,
-      settings: {
-        slidesToShow: 1,
-        slidesToScroll: 1,
-        infinite: true,
-         prevArrow: false,
-    nextArrow: false,
-        dots: true
-      }
-    },
-    {
-      breakpoint: 600,
-      settings: {
-        slidesToShow: 1,
-        slidesToScroll: 1
-      }
-    },
-    {
-      breakpoint: 480,
-      settings: {
-        slidesToShow: 1,
-        slidesToScroll: 1
-      }
-    }
-    // You can unslick at a given breakpoint now by adding:
-    // settings: "unslick"
-    // instead of a settings object
-  ]
-});
-
-
-
-
-
-$('').owlCarousel({
-    loop:true,
-    dots:true,
-    items:2,
-    margin:30,
-    responsiveClass:true,
-     nav: false,
-  dots: true,
-    responsive:{
-        0:{
-            items:1,
-            nav:true
-        },
-        1100:{
-            items:2,
-            nav:true
-        }
-    }
-});
-
-// $(document).ready(function(){
-//     $("#testimonial-slider").owlCarousel({
-//         items:2,
-//         itemsDesktop:[1100,1],
-//         itemsDesktopSmall:[979,1],
-//         itemsTablet:[768,1],
-//         pagination:true,
-//         navigation:true,
-//         // navigationText:["",""],
-//         slideSpeed:1000,
-//         autoPlay:true,
-//         dots:true
-//     });
-// });
-
-
-$(document).ready(function(){
-    $("#testimonial-slider").owlCarousel({
-        items:3,
-        itemsDesktop:[1199,2],
-        itemsDesktopSmall:[979,2],
-        itemsTablet:[768,2],
-        itemsMobile:[600,1],
-        pagination:true,
-        navigation:false,
-        navigationText:["",""],
-        slideSpeed:1000,
-        autoPlay:true
-    });
-});
