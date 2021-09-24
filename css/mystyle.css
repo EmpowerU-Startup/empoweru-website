@@ -189,7 +189,7 @@ body{
 	filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
 
 }
-.contactbtn{
+.joinbtn{
 	box-shadow: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
 	background: white;
 	font-size: 1.8rem;
@@ -201,14 +201,15 @@ body{
 	filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
 
 }
-.contactbtn:hover{
+.joinbtn:hover{
 	background: var(--pink);
-	border:2px solid white;
+	border:2px solid var(--pink);
 	color:white!important;
 }
 .lrn-more-btn:hover{
 	background: var(--pink);
-	border:2px solid white;
+	border:2px solid var(--pink);
+	color: white;
 }
 
 .arrow {
